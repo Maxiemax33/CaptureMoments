@@ -11,7 +11,7 @@ dynamodb = boto3.resource('dynamodb', region_name='ap-south-1')  # Replace with 
 
 # Tables
 photographers_table = dynamodb.Table('photographers')
-bookings_table = dynamodb.Table('bookings')
+bookings_table = dynamodb.Table('booking')
 
 # Home Page
 @app.route('/')
