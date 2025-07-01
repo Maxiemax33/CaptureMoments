@@ -48,9 +48,9 @@ def show_photographers():
     response = photographers_table.scan()
     photographers = response.get('Items', [])
 
-    # Extract availability data for HTML rendering
+    # ✅ FIXED: use correct DynamoDB key - 'photographer_id'
     availability_data = {
-        p['id']: p.get('availability', []) for p in photographers
+        p['photographer_id']: p.get('availability', []) for p in photographers
     }
 
     return render_template('photographers.html',
